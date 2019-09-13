@@ -1,0 +1,41 @@
+<br>
+<div class="card">
+    <div class="card-header">
+        <H1>Danh sách sinh viên</H1>
+    </div>
+    <div class="card-body">
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search for..." aria-label="Search">
+            <button class="btn text-white bg-primary my-2 my-sm-0" type="submit">Search </button>
+        </form>
+        <br>
+        
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">LastName</th>
+                    <th scope="col">FirstName</th>
+                    <th scope="col">EnrollDate</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+
+            <tr *ngFor='let a of students'>
+                <td>{{a.LastName}}</td>
+                <td>{{a.FirstMidName}}</td>
+                <td>{{a.EnrollmentDate}}</td>
+                <td>
+                        <button type="button" class="btn btn-light"><a [routerLink]="['home/sinhvien',a.ID]" ><i class="fas fa-info-circle"></i></a></button>
+                     &nbsp;
+                    <button type="button" class="btn btn-light" (click)="xoa(a.ID)"><i class="fas fa-trash-alt"></i></button>
+                
+                    
+                
+                </td>
+            </tr>
+
+
+        </table>
+        
+    </div>
+</div>
