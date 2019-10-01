@@ -1,23 +1,33 @@
 <div class="container">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
         </button>
-      
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item ">
-              <a class="nav-link" [routerLink]="['']">Home<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" [routerLink]="['sinhvien']">Sinh viên</a>
-            </li>
-           
-            
-          </ul>
-          
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" [routerLink]="['lab2']">Lab 2 <span class="sr-only">(current)</span></a>
+                </li>
+                
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Lab 3
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" [routerLink]="['lab3/hinhchunhat']">Hình chữ nhật (bài 1-1)</a>
+                        <a class="dropdown-item" [routerLink]="['lab3/sinhvien']">xếp loại sinh viên(bài 1-2)</a>
+                        <a class="dropdown-item" [routerLink]="['lab3/tienthuong']">Tiền thưởng tết nguyên đán (bài 2,4)</a>
+                        <a class="dropdown-item" [routerLink]="['lab3/banhang']">Bán nước giải khát (bài 3)</a>
+                    </div>
+                </li>
+            </ul>
+
         </div>
-      </nav>
-  <router-outlet></router-outlet>
+    </nav>
+    <br>
+    <router-outlet></router-outlet>
 </div>

@@ -1,4 +1,5 @@
 <br>
+
 <div class="card">
     <div class="card-header">
         <H1>Danh sách sinh viên</H1>
@@ -25,7 +26,7 @@
                 <td>{{a.FirstMidName}}</td>
                 <td>{{a.EnrollmentDate}}</td>
                 <td>
-                        <button type="button" class="btn btn-light"><a [routerLink]="['home/sinhvien',a.ID]" ><i class="fas fa-info-circle"></i></a></button>
+                        <button type="button" class="btn btn-light"><a [routerLink]="['lab2/sinhvien',a.ID]" ><i class="fas fa-info-circle"></i></a></button>
                      &nbsp;
                     <button type="button" class="btn btn-light" (click)="xoa(a.ID)"><i class="fas fa-trash-alt"></i></button>
                 

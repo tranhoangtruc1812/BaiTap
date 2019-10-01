@@ -1,0 +1,30 @@
+<div class="card ">
+    <div class="card-header text-center">
+        <H1>BÁN HÀNG GIẢI KHÁT</H1>
+    </div>
+    <div class="card-body">
+            <table class="table">
+                    <thead>
+                      <tr>
+                          <th scope="col"></th>
+                        <th scope="col">Tên hàng</th>
+                        <th scope="col">Số lượng</th>
+                        <th scope="col">Đơn giá</th>
+                        <th scope="col">Thành tiền</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor='let sp of list'>
+                        <td><input type="checkbox" class="checkbox"  [(ngModel)]="sp.select" value="" [ngModelOptions]="{standalone: true}"></td>
+                        <td>{{sp.name}}</td>
+                        <td><input type="number" class="form-group" [(ngModel)]="sp.soluong" [ngModelOptions]="{standalone: true}" ></td>
+                        <td> $ {{sp.price}}</td>
+                        <td>  $ {{ThanhTien(sp.price,sp.soluong)}}</td>
+                      </tr>                       
+                    </tbody>
+                  </table>
+    </div>
+    <div class="card-footer text-muted">
+       Tổng tiền : $ {{TongTien()}}
+    </div>
+</div>
