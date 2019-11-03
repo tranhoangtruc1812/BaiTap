@@ -1,0 +1,88 @@
+<h1>Your Cart</h1>
+<p>To remove an item from your cart, change its quantity to 0.</p>
+<br>
+<table class="table">
+  <thead >
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Price</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Total</th>
+    </tr>
+
+  </thead>
+  <tbody>
+    <tr *ngFor='let p of mycart'>
+      <td>{{p.productname}}</td>
+      <td>{{p.price}}</td>
+      <td><input type="number" [(ngModel)]="p.quantity"></td>
+      <td>$ {{yourprice(p.id)}}</td>
+    </tr>
+
+    <tr style="border-top: solid darkslategrey 5px;">
+      <td></td>
+      <td></td>
+      <td><b>Subtotal:</b></td>
+      <td>$ {{subtotal()}}</td>
+    </tr>
+  </tbody>
+</table>
+<div class="row">
+  <div class="col-5"></div>
+  <div class="col-3">
+     <!-- Button to Open the Modal -->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+      Buy now
+    </button>
+  
+    <!-- The Modal -->
+    <div class="modal" id="myModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+  
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title">Customer information</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <!-- Modal body -->
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label>Full name: </label>
+                <input type="text" class="form-control" [(ngModel)]="info.name" [ngModelOptions]="{standalone: true}" >
+              </div>
+              <div class="form-group">
+                <label>Address: </label>
+                <input type="text" class="form-control" [(ngModel)]="info.address" [ngModelOptions]="{standalone: true}">
+              </div>
+  
+              <div class="form-group">
+                <label>Email: </label>
+                <input type="text" class="form-control" [(ngModel)]="info.email" [ngModelOptions]="{standalone: true}">
+              </div>
+              <div class="form-group">
+                <label>Phone number: </label>
+                <input type="text" class="form-control" [(ngModel)]="info.phone"[ngModelOptions]="{standalone: true}">
+              </div>
+            </form>
+          </div>
+          <!-- Modal footer -->
+          <div class="modal-footer">
+              <a [routerLink]="['/account']"><button type="button" class="btn btn-success" data-dismiss="modal" (click)="addToCart()">Buy </button></a>
+            <button type="button" class="btn btn-second" data-dismiss="modal">Cancle</button>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<br><br>
+<p>return to:<a [routerLink]="['']">Home</a> <br>
+
+
+
+ 
+

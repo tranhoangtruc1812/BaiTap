@@ -1,0 +1,21 @@
+<h1>Featured products</h1>
+<p>We have a great selection of musical instruments including guitars, basses, and durm. and we're constrantly adding
+  more to give you best selection possusle
+</p>
+
+  <div class="card " *ngFor='let a of products'>
+      <a [routerLink]="['/home',a.id]">
+    <div class="row no-gutters">
+      <div class="col-md-4">
+        <img src="./assets/{{a.img}}" class="card-img" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h4>{{a.productname}}</h4>
+          <b>your price:</b> $ {{a.price}} <br>
+          {{a.description}}
+        </div>
+      </div>
+    </div>
+  </a>
+  </div>

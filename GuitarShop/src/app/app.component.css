@@ -1,0 +1,37 @@
+li>a {
+    color: black;
+}
+.phan{
+    margin-bottom: 20px;
+    
+}
+.container{
+    background: rgb(229, 248, 248);
+}
+
+
+.card{
+    background:rgba(59, 211, 198, 0.534);
+}
+aside{
+    background: rgb(202, 224, 245);
+    padding: 15px ;
+    margin-right: 15px;
+    margin-left: 10px;
+
+}
+footer{
+    text-align: right;
+}
+.title{
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
+    color: coral;
+    font-weight: bolder;
+    font-size: 180px;
+}
+hr {
+    height: 5px;
+}
+h3{
+    color: darkgoldenrod;
+}

@@ -1,0 +1,61 @@
+<h1>Your Order</h1>
+Order Number: 4 <br>
+Order Date: Nov 1st, 2019
+<h3>Information of customer</h3>
+Name: {{info.name}} <br>
+Address: {{info.address}} <br>
+Email: {{info.email}} <br>
+Phone number: {{info.phone}} <br>
+Ship Date: Not shipped yet, <br>
+ <br>
+<h3>Order Items</h3>
+<table class="table" style="border: none;">
+    <thead >
+        <tr  style="border-bottom: solid darkslategrey 5px;">
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Saving</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Total</th>
+        </tr>
+
+    </thead>
+    <tbody>
+        <tr *ngFor='let p of mycart'>
+            <td>{{p.productname}}</td>
+            <td>{{p.price}}</td>
+            <td>{{p.price*p.discount/100}}</td>
+            <td>{{p.quantity}}</td>
+            <td>$ {{yourprice(p.id)}}</td>
+        </tr>
+
+        <tr style="border-top: solid darkslategrey 5px;">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><b>Subtotal:</b></td>
+            <td>$ {{subtotal()}}</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><b>Shipping:</b></td>
+            <td>$ {{ship}}</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><b>VAT(10%):</b></td>
+            <td>$ {{vat()}}</td>
+        </tr>
+        <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><b>Total:</b></td>
+                <td>$ {{total()}}</td>
+            </tr>
+    </tbody>
+</table>
